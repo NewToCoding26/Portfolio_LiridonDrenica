@@ -1,0 +1,29 @@
+body{
+    background-color: #F4F7FB;
+}
+
+.text{
+    margin: 0 auto;
+    padding: 100px;
+    padding-left: 40px;
+}
+
+.text .myName{
+    margin: 0 auto;
+    font-size: 6.5rem;
+}
+
+.text .slogan{
+    margin: 0 auto;
+    font-size: 3.7rem;
+}
+
+.text .description{
+    margin: 4 auto;
+    font-size: 1.2rem;
+}
+
+.pictureOfMe{
+    border-radius: 50%;
+    max-width: 600px;
+}
