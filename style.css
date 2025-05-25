@@ -1,22 +1,23 @@
 body {
-    background-color: #F4F7FB;
+    background-color: #C8E6C9  ;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    color: #1B4332;
 }
 
 .text {
     margin: 0 auto;
-    padding: 100px;
-    max-width: 10000px;
-    padding-left: 100px;
+    padding: 50px;
+    max-width: 5000px;
+    padding-left: 50px;
 }
 
 .header-row {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 180px;
+    gap: 90px;
     justify-content: flex-start;
 }
 
@@ -27,25 +28,50 @@ body {
 }
 
 .myName {
-    font-size: 12rem;
+    font-size: 6rem;
     margin: 0;
 }
 
 .slogan {
-    font-size: 5.8rem;
+    font-size: 2.9rem;
     margin: 0;
-    margin-top: 25px;
+    margin-top: 12.5px;
 }
 
 .pictureOfMe {
-    width: 650px;
-    height: 650px;
+    width: 325px;
+    height: 325px;
     border-radius: 100%;
     object-fit: cover;
 }
 
 .description {
-    margin-top: 20px;
-    font-size: 1.8rem;
+    margin-top: 10px;
+    font-size: 0.9rem;
     line-height: 1.6;
+}
+
+.ownProjects {
+    padding-left: 50px;
+    margin-top: 78px;
+}
+
+.titleProject {
+    font-size: 3.5rem;
+}
+
+.jjbaQuiz{
+    font-size: 2.5rem;
+}
+
+.screenShot{
+    width: 900px;
+    height: 500px;
+    cursor: pointer;
+}
+
+.faqTitle{
+    margin-top: 50px;
+    padding-left: 50px;
+    border: 2px solid #1B4332;
 }
