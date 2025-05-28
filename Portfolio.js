@@ -1,7 +1,7 @@
 const jjbaScreenshot = document.querySelector('.screenShot');
 if(jjbaScreenshot) {
     jjbaScreenshot.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.05)';
+        this.style.transform = 'scale(1.03)';
         this.style.transition = 'transform 0.3s ease';
     });
 
