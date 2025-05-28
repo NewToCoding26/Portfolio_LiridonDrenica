@@ -187,6 +187,35 @@ body {
     font-size: 0.9rem;
 }
 
+.roadmap-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.back-button {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 15px 25px;
+    background: #2D5A27;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #2D5A27, #40826D);
+    color: white;
+}
+
 @media (max-width: 768px) {
     .roadmap-container {
         padding: 0 10px;
@@ -210,12 +239,8 @@ body {
         gap: 8px;
         align-items: flex-end;
     }
-}
-
-.button-selection{
-    display: flex;
-    justify-content: flex-end;
-    align-self: flex-end;
-    text-decoration: none;
-    background-color: #2D5A27;
+    
+    .roadmap-footer {
+        justify-content: center;
+    }
 }
