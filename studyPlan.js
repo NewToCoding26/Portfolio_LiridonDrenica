@@ -1,3 +1,4 @@
+// Learning Roadmap Data
 const roadmapData = [
     {
         title: "1. Fundamentals",
@@ -99,25 +100,29 @@ const roadmapData = [
     }
 ];
 
+// Calculate progress percentage for a category
 function calculateProgress(skills) {
     const completed = skills.filter(skill => skill.status === 'completed').length;
     const inProgress = skills.filter(skill => skill.status === 'progress').length;
     
+    // Completed skills count as 100%, in-progress as 50%
     const totalProgress = (completed * 100) + (inProgress * 50);
     const maxProgress = skills.length * 100;
     
     return Math.round(totalProgress / maxProgress * 100);
 }
 
+// Get status icon based on skill status
 function getStatusIcon(status) {
     const icons = {
         completed: '✓',
-        progress: '🔄',
+        progress: '', // Empty, animation handled by CSS
         pending: '✕'
     };
-    return icons[status] || '?';
+    return icons[status] || '';
 }
 
+// Create HTML for a skill item
 function createSkillItem(skill) {
     return `
         <div class="skill-item">
@@ -132,6 +137,7 @@ function createSkillItem(skill) {
     `;
 }
 
+// Create HTML for a category
 function createCategory(category, index) {
     const progress = calculateProgress(category.skills);
     const completedCount = category.skills.filter(skill => skill.status === 'completed').length;
@@ -160,11 +166,13 @@ function createCategory(category, index) {
     `;
 }
 
+// Toggle category expansion
 function toggleCategory(index) {
     const category = document.querySelector(`[data-category="${index}"]`);
     category.classList.toggle('expanded');
 }
 
+// Initialize the roadmap
 function initRoadmap() {
     const container = document.getElementById('roadmap-categories');
     const categoriesHtml = roadmapData.map((category, index) => 
@@ -174,4 +182,5 @@ function initRoadmap() {
     container.innerHTML = categoriesHtml;
 }
 
+// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initRoadmap);
