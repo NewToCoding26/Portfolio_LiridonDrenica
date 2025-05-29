@@ -1,5 +1,5 @@
 body {
-    background-color: #C8E6C9  ;
+    background-color: #C8E6C9;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -60,41 +60,190 @@ body {
     font-size: 3.5rem;
 }
 
-.jjbaQuiz{
+.jjbaQuiz {
     font-size: 2.5rem;
 }
 
-.screenShot{
+.screenShot {
     width: 1100px;
     height: 600px;
     cursor: pointer;
 }
 
-.faqTitle{
+.faqTitle {
     margin-top: 50px;
     padding-left: 50px;
-    border: 2px solid #1B4332;
     cursor: pointer;
     font-size: 2.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    user-select: none;
 }
 
-.hidden{
+.faqTitle::after {
+    content: " ▼";
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.faqTitle:hover {
+    color: #2D5A3D;
+    transform: translateY(-2px);
+}
+
+.hidden {
     display: none;
     font-size: 1.2rem;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-.roadMap{
+.visible {
+    display: block !important;
+    font-size: 1.2rem;
+    padding-left: 50px;
+    padding-right: 50px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.roadMap {
     margin-top: 50px;
     padding-left: 50px;
     font-size: 1.5rem;
+    margin-bottom: 80px;
 }
 
-.roadMapTitle{
+.roadMapTitle {
     font-size: 1.3rem;
 }
 
-.roadMapRedirect{
+.roadMapRedirect {
     color: #1B4332;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #2D5A3D;
+    color: #C8E6C9;
+    padding: 50px 0 20px 0;
+    margin-top: 50px;
+}
+
+.footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 0 50px;
+}
+
+.footerSection {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footerTitle {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #C8E6C9;
+    border-bottom: 2px solid #4A6B4F;
+    padding-bottom: 10px;
+}
+
+.socialIcons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footerIcon {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #C8E6C9;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.footerIcon ion-icon {
+    font-size: 2rem;
+}
+
+.footerIcon:hover {
+    background-color: #4A6B4F;
+    transform: translateX(10px);
+    color: #ffffff;
+}
+
+.legalLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footerLink {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #C8E6C9;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.footerLink ion-icon {
+    font-size: 1.5rem;
+}
+
+.footerLink:hover {
+    background-color: #4A6B4F;
+    color: #ffffff;
+    transform: translateX(8px);
+}
+
+.footerBottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #4A6B4F;
+    color: #A8C8AA;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footerContent {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .socialIcons,
+    .legalLinks {
+        align-items: center;
+    }
+    
+    .footerIcon:hover,
+    .footerLink:hover {
+        transform: translateY(-3px);
+    }
 }
