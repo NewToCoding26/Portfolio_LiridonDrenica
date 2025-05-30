@@ -8,6 +8,10 @@ if(jjbaScreenshot) {
     jjbaScreenshot.addEventListener('mouseleave', function() {
         this.style.transform = 'scale(1)';
     });
+
+    jjbaScreenshot.addEventListener('click', function () {
+        window.open('https://newtocoding26.github.io/JJBA_Quiz/JJBAQUIZ.html', '_blank')
+    });
 }
 
 const pictureOfMe = document.querySelector('.pictureOfMe');
