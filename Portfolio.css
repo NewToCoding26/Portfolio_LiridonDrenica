@@ -181,6 +181,7 @@ body {
     transition: all 0.3s ease;
     padding: 10px;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .footerIcon ion-icon {
@@ -230,6 +231,147 @@ body {
     font-size: 0.9rem;
 }
 
+/* CV Modal Styles */
+.cv-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 67, 50, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cv-modal.show {
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #C8E6C9;
+    border-radius: 15px;
+    padding: 0;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(27, 67, 50, 0.3);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+    border: 3px solid #2D5A3D;
+}
+
+.cv-modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    background-color: #2D5A3D;
+    color: #C8E6C9;
+    padding: 20px 25px;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-header ion-icon {
+    font-size: 1.8rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #C8E6C9;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    background-color: #4A6B4F;
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 30px 25px;
+    text-align: center;
+}
+
+.modal-body p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #1B4332;
+    font-weight: 500;
+}
+
+.cv-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cv-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    min-width: 160px;
+    justify-content: center;
+}
+
+.view-btn {
+    background-color: #2D5A3D;
+    color: #C8E6C9;
+    border: 2px solid #2D5A3D;
+}
+
+.view-btn:hover {
+    background-color: #1B4332;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(27, 67, 50, 0.3);
+}
+
+.download-btn {
+    background-color: transparent;
+    color: #2D5A3D;
+    border: 2px solid #2D5A3D;
+}
+
+.download-btn:hover {
+    background-color: #2D5A3D;
+    color: #C8E6C9;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(27, 67, 50, 0.3);
+}
+
+.cv-btn ion-icon {
+    font-size: 1.3rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .footerContent {
@@ -245,5 +387,24 @@ body {
     .footerIcon:hover,
     .footerLink:hover {
         transform: translateY(-3px);
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .cv-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cv-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .modal-header h3 {
+        font-size: 1.3rem;
     }
 }
