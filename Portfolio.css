@@ -8,9 +8,8 @@ body {
 
 .text {
     margin: 0 auto;
-    padding: 50px;
+    padding: 50px; /* Bereits symmetrisch */
     max-width: 5000px;
-    padding-left: 50px;
 }
 
 .header-row {
@@ -33,9 +32,9 @@ body {
 }
 
 .slogan {
-    font-size: 2.9rem;
+    font-size: 3.2rem;
     margin: 0;
-    margin-top: 12.5px;
+    margin-top: 5px;
 }
 
 .pictureOfMe {
@@ -46,38 +45,46 @@ body {
 }
 
 .description {
-    margin-top: 10px;
-    font-size: 0.9rem;
+    margin-top: 12px;
+    font-size: 1.1rem;
     line-height: 1.6;
 }
 
 .ownProjects {
-    padding-left: 50px;
+    padding: 0 50px; /* Links UND rechts 50px */
     margin-top: 78px;
 }
 
 .titleProject {
-    font-size: 3.5rem;
-}
-
-.jjbaQuiz {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
 }
 
 .screenShot {
+    display: block;
+    margin: 0 auto;
     width: 1100px;
     height: 600px;
     cursor: pointer;
 }
 
+.projectDesciption {
+    font-size: 1.3rem;
+}
+
+.faqSection {
+    padding: 0 50px; /* Links UND rechts 50px für FAQ Section */
+}
+
 .faqTitle {
-    margin-top: 50px;
-    padding-left: 50px;
+    margin: 50px 0 30px 0;
     cursor: pointer;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     transition: all 0.3s ease;
     position: relative;
     user-select: none;
+    text-align: left;
+    color: #1B4332;
+    font-weight: bold;
 }
 
 .faqTitle::after {
@@ -85,7 +92,8 @@ body {
     font-size: 1.5rem;
     transition: transform 0.3s ease;
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 15px;
+    color: #2D5A3D;
 }
 
 .faqTitle:hover {
@@ -96,22 +104,32 @@ body {
 .hidden {
     display: none;
     font-size: 1.2rem;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 40px;
+    background-color: #D3EBD4;
+    border-radius: 20px;
+    line-height: 1.8;
+    box-shadow: 0 5px 20px rgba(27, 67, 50, 0.15);
+    border: 2px solid rgba(45, 90, 61, 0.2);
+    margin: 0; /* Margin entfernt, da padding bereits in faqSection gesetzt */
 }
 
 .visible {
     display: block !important;
     font-size: 1.2rem;
-    padding-left: 50px;
-    padding-right: 50px;
-    animation: fadeIn 0.3s ease-in-out;
+    padding: 40px;
+    background-color: #D3EBD4;
+    border-radius: 20px;
+    line-height: 1.8;
+    box-shadow: 0 5px 20px rgba(27, 67, 50, 0.15);
+    border: 2px solid rgba(45, 90, 61, 0.2);
+    margin: 0; /* Margin entfernt, da padding bereits in faqSection gesetzt */
+    animation: fadeIn 0.4s ease-in-out;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-20px);
     }
     to {
         opacity: 1;
@@ -121,13 +139,13 @@ body {
 
 .roadMap {
     margin-top: 50px;
-    padding-left: 50px;
+    padding: 0 50px; /* Links UND rechts 50px */
     font-size: 1.5rem;
     margin-bottom: 80px;
 }
 
 .roadMapTitle {
-    font-size: 1.3rem;
+    font-size: 2.8rem;
 }
 
 .roadMapRedirect {
@@ -374,6 +392,12 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .screenShot {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+    
     .footerContent {
         flex-direction: column;
         text-align: center;
