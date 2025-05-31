@@ -186,29 +186,32 @@ body {
 .socialIcons {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px; /* Reduziert von 20px auf 15px */
 }
 
 .footerIcon {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px; /* Reduziert von 15px auf 12px */
     color: #C8E6C9;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem; /* Reduziert von 1.1rem auf 1rem */
     transition: all 0.3s ease;
-    padding: 10px;
+    padding: 8px; /* Reduziert von 10px auf 8px */
     border-radius: 8px;
     cursor: pointer;
 }
 
 .footerIcon ion-icon {
-    font-size: 2rem;
+    font-size: 1.5rem; /* Reduziert von 2rem auf 1.5rem */
+    width: 1.5rem; /* Reduziert von 2rem auf 1.5rem */
+    display: flex;
+    justify-content: center;
 }
 
 .footerIcon:hover {
     background-color: #4A6B4F;
-    transform: translateX(10px);
+    transform: translateX(8px); /* Reduziert von 10px auf 8px */
     color: #ffffff;
 }
 
@@ -232,6 +235,9 @@ body {
 
 .footerLink ion-icon {
     font-size: 1.5rem;
+    width: 1.5rem; /* Feste Breite für gleichmäßige Abstände */
+    display: flex;
+    justify-content: center;
 }
 
 .footerLink:hover {
