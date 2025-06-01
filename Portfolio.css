@@ -8,8 +8,8 @@ body {
 
 .text {
     margin: 0 auto;
-    padding: 50px; /* Bereits symmetrisch */
-    max-width: 5000px;
+    padding: 50px;
+    max-width: 1200px;
 }
 
 .header-row {
@@ -51,7 +51,7 @@ body {
 }
 
 .ownProjects {
-    padding: 0 50px; /* Links UND rechts 50px */
+    padding: 0 50px;
     margin-top: 78px;
 }
 
@@ -72,7 +72,7 @@ body {
 }
 
 .faqSection {
-    padding: 0 50px; /* Links UND rechts 50px für FAQ Section */
+    padding: 0 50px;
 }
 
 .faqTitle {
@@ -110,7 +110,7 @@ body {
     line-height: 1.8;
     box-shadow: 0 5px 20px rgba(27, 67, 50, 0.15);
     border: 2px solid rgba(45, 90, 61, 0.2);
-    margin: 0; /* Margin entfernt, da padding bereits in faqSection gesetzt */
+    margin: 0;
 }
 
 .visible {
@@ -122,7 +122,7 @@ body {
     line-height: 1.8;
     box-shadow: 0 5px 20px rgba(27, 67, 50, 0.15);
     border: 2px solid rgba(45, 90, 61, 0.2);
-    margin: 0; /* Margin entfernt, da padding bereits in faqSection gesetzt */
+    margin: 0;
     animation: fadeIn 0.4s ease-in-out;
 }
 
@@ -139,7 +139,7 @@ body {
 
 .roadMap {
     margin-top: 50px;
-    padding: 0 50px; /* Links UND rechts 50px */
+    padding: 0 50px;
     font-size: 1.5rem;
     margin-bottom: 80px;
 }
@@ -186,32 +186,32 @@ body {
 .socialIcons {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Reduziert von 20px auf 15px */
+    gap: 15px;
 }
 
 .footerIcon {
     display: flex;
     align-items: center;
-    gap: 12px; /* Reduziert von 15px auf 12px */
+    gap: 12px;
     color: #C8E6C9;
     text-decoration: none;
-    font-size: 1rem; /* Reduziert von 1.1rem auf 1rem */
+    font-size: 1rem;
     transition: all 0.3s ease;
-    padding: 8px; /* Reduziert von 10px auf 8px */
+    padding: 8px;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .footerIcon ion-icon {
-    font-size: 1.5rem; /* Reduziert von 2rem auf 1.5rem */
-    width: 1.5rem; /* Reduziert von 2rem auf 1.5rem */
+    font-size: 1.5rem;
+    width: 1.5rem;
     display: flex;
     justify-content: center;
 }
 
 .footerIcon:hover {
     background-color: #4A6B4F;
-    transform: translateX(8px); /* Reduziert von 10px auf 8px */
+    transform: translateX(8px);
     color: #ffffff;
 }
 
@@ -235,7 +235,7 @@ body {
 
 .footerLink ion-icon {
     font-size: 1.5rem;
-    width: 1.5rem; /* Feste Breite für gleichmäßige Abstände */
+    width: 1.5rem;
     display: flex;
     justify-content: center;
 }
@@ -396,45 +396,486 @@ body {
     font-size: 1.3rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* RESPONSIVE DESIGN */
+
+/* Large Desktop (1200px+) - Base styles above */
+
+/* Medium Desktop / Large Tablet (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .text {
+        padding: 40px;
+        max-width: 1000px;
+    }
+    
+    .myName {
+        font-size: 5.5rem;
+    }
+    
+    .slogan {
+        font-size: 3rem;
+    }
+    
+    .pictureOfMe {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .header-row {
+        gap: 70px;
+    }
+    
+    .screenShot {
+        width: 900px;
+        height: 500px;
+    }
+    
+    .titleProject,
+    .faqTitle,
+    .roadMapTitle {
+        font-size: 2.5rem;
+    }
+}
+
+/* Small Desktop / Large Tablet (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .text {
+        padding: 30px;
+    }
+    
+    .myName {
+        font-size: 4.5rem;
+    }
+    
+    .slogan {
+        font-size: 2.5rem;
+    }
+    
+    .pictureOfMe {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .header-row {
+        gap: 50px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .description {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .ownProjects,
+    .faqSection,
+    .roadMap {
+        padding: 0 30px;
+    }
+    
     .screenShot {
         width: 100%;
-        max-width: 500px;
+        max-width: 700px;
         height: auto;
+        aspect-ratio: 16/9;
+    }
+    
+    .titleProject,
+    .faqTitle,
+    .roadMapTitle {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+    
+    .projectDesciption {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .roadMap {
+        text-align: center;
+    }
+    
+    .footerContent {
+        padding: 0 30px;
+        gap: 40px;
+    }
+}
+
+/* Tablet Portrait (481px - 767px) */
+@media (max-width: 767px) and (min-width: 481px) {
+    .text {
+        padding: 25px;
+    }
+    
+    .header-row {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .myName {
+        font-size: 3.5rem;
+    }
+    
+    .slogan {
+        font-size: 2rem;
+    }
+    
+    .pictureOfMe {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .description {
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .ownProjects,
+    .faqSection,
+    .roadMap {
+        padding: 0 25px;
+    }
+    
+    .ownProjects {
+        margin-top: 50px;
+    }
+    
+    .titleProject,
+    .faqTitle,
+    .roadMapTitle {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .screenShot {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        max-width: 500px;
+    }
+    
+    .projectDesciption {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    .hidden,
+    .visible {
+        padding: 30px;
+        font-size: 1.1rem;
+    }
+    
+    .roadMap {
+        text-align: center;
+        font-size: 1.3rem;
     }
     
     .footerContent {
         flex-direction: column;
         text-align: center;
+        padding: 0 25px;
+        gap: 30px;
+    }
+    
+    .footerSection {
+        min-width: auto;
     }
     
     .socialIcons,
     .legalLinks {
         align-items: center;
+        gap: 12px;
     }
     
     .footerIcon:hover,
     .footerLink:hover {
         transform: translateY(-3px);
     }
+}
+
+/* Mobile Landscape & Large Mobile (321px - 480px) */
+@media (max-width: 480px) and (min-width: 321px) {
+    .text {
+        padding: 20px;
+    }
+    
+    .header-row {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .myName {
+        font-size: 2.8rem;
+        line-height: 1.1;
+    }
+    
+    .slogan {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+    
+    .pictureOfMe {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .description {
+        font-size: 0.95rem;
+        text-align: center;
+        margin-top: 15px;
+        line-height: 1.5;
+    }
+    
+    .ownProjects,
+    .faqSection,
+    .roadMap {
+        padding: 0 20px;
+    }
+    
+    .ownProjects {
+        margin-top: 40px;
+    }
+    
+    .titleProject,
+    .faqTitle,
+    .roadMapTitle {
+        font-size: 1.8rem;
+        text-align: center;
+        line-height: 1.2;
+    }
+    
+    .faqTitle {
+        margin: 40px 0 25px 0;
+    }
+    
+    .faqTitle::after {
+        font-size: 1.2rem;
+        margin-left: 10px;
+    }
+    
+    .screenShot {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        max-width: 400px;
+    }
+    
+    .projectDesciption {
+        font-size: 1rem;
+        text-align: center;
+        line-height: 1.4;
+    }
+    
+    .hidden,
+    .visible {
+        padding: 25px;
+        font-size: 1rem;
+        line-height: 1.6;
+        border-radius: 15px;
+    }
+    
+    .roadMap {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+    
+    .footerContent {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 20px;
+        gap: 25px;
+    }
+    
+    .footerTitle {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .socialIcons,
+    .legalLinks {
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .footerIcon,
+    .footerLink {
+        font-size: 0.95rem;
+        padding: 6px;
+    }
+    
+    .footerIcon ion-icon,
+    .footerLink ion-icon {
+        font-size: 1.3rem;
+        width: 1.3rem;
+    }
     
     .modal-content {
         width: 95%;
-        margin: 20px;
+        margin: 10px;
     }
     
-    .cv-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .cv-btn {
-        width: 100%;
-        max-width: 250px;
+    .modal-header {
+        padding: 15px 20px;
     }
     
     .modal-header h3 {
         font-size: 1.3rem;
+    }
+    
+    .modal-body {
+        padding: 25px 20px;
+    }
+    
+    .modal-body p {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+    
+    .cv-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .cv-btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+/* Small Mobile (max-width: 320px) */
+@media (max-width: 320px) {
+    .text {
+        padding: 15px;
+    }
+    
+    .myName {
+        font-size: 2.3rem;
+        line-height: 1.1;
+    }
+    
+    .slogan {
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+    
+    .pictureOfMe {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .description {
+        font-size: 0.9rem;
+    }
+    
+    .ownProjects,
+    .faqSection,
+    .roadMap {
+        padding: 0 15px;
+    }
+    
+    .titleProject,
+    .faqTitle,
+    .roadMapTitle {
+        font-size: 1.6rem;
+    }
+    
+    .projectDesciption {
+        font-size: 0.95rem;
+    }
+    
+    .hidden,
+    .visible {
+        padding: 20px;
+        font-size: 0.95rem;
+    }
+    
+    .roadMap {
+        font-size: 1.1rem;
+    }
+    
+    .footerContent {
+        padding: 0 15px;
+    }
+    
+    .footerTitle {
+        font-size: 1.3rem;
+    }
+    
+    .footerIcon,
+    .footerLink {
+        font-size: 0.9rem;
+    }
+    
+    .modal-header {
+        padding: 12px 15px;
+    }
+    
+    .modal-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .modal-body {
+        padding: 20px 15px;
+    }
+    
+    .modal-body p {
+        font-size: 1rem;
+    }
+    
+    .cv-btn {
+        font-size: 0.95rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .faqTitle:hover {
+        transform: none;
+    }
+    
+    .footerIcon:hover,
+    .footerLink:hover {
+        transform: none;
+        background-color: #4A6B4F;
+    }
+    
+    .close-btn:hover {
+        transform: none;
+    }
+    
+    .view-btn:hover,
+    .download-btn:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    /* Increase touch targets */
+    .faqTitle {
+        padding: 10px 0;
+    }
+    
+    .footerIcon,
+    .footerLink {
+        padding: 12px 8px;
+        min-height: 44px;
+    }
+    
+    .cv-btn {
+        min-height: 48px;
+        padding: 15px 20px;
+    }
+    
+    .close-btn {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 10px;
     }
 }

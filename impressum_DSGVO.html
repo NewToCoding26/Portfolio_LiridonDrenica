@@ -1,106 +1,209 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum & Datenschutz - Liridon Drenica</title>
+    <title>Legal Notice & Privacy Policy - Liridon Drenica</title>
     <link rel="stylesheet" href="impressum_DSGVO.css">
 </head>
 
 <body>
     <div class="container">
         <header class="header">
-            <h1>Impressum & Datenschutz</h1>
-            <a href="Portfolio.html" class="backLink">← Zurück zum Portfolio</a>
+            <h1 id="main-title">Legal Notice, Disclaimer & Privacy Policy</h1>
+            
+            <div class="language-toggle">
+                <button class="language-btn active" onclick="switchLanguage('en')" id="btn-en">
+                    <span class="flag"></span>English
+                </button>
+                <button class="language-btn" onclick="switchLanguage('de')" id="btn-de">
+                    <span class="flag"></span>Deutsch
+                </button>
+            </div>
+            
+            <a href="Portfolio.html" class="backLink active" id="back-en">← Back to Portfolio</a>
+            <a href="Portfolio.html" class="backLink" id="back-de">← Zurück zum Portfolio</a>
         </header>
 
-        <!-- Impressum Section -->
-        <section class="section">
-            <h2 class="sectionTitle">Impressum</h2>
-            <div class="content">
-                <h3>Angaben gemäß § 5 TMG</h3>
-                <p><strong>Liridon Drenica</strong><br>
-                Neusser Straße 33<br>
-                40667 Meerbusch<br>
-                Deutschland</p>
+        <!-- ENGLISH VERSION -->
+        <div id="content-en" class="language-content active">
+            <!-- Legal Notice Section -->
+            <section class="section">
+                <h2 class="sectionTitle">Legal Notice</h2>
+                <div class="content">
+                    <h3>Information pursuant to § 5 TMG</h3>
+                    <p><strong>Liridon Drenica</strong><br>
+                    Neusser Straße 33<br>
+                    40667 Meerbusch<br>
+                    Germany</p>
 
-                <h3>Kontakt</h3>
-                <p>E-Mail: <a href="mailto:Liridon992@gmx.de">Liridon992@gmx.de</a></p>
+                    <h3>Contact</h3>
+                    <p>Email: <a href="mailto:Liridon992@gmx.de">Liridon992@gmx.de</a></p>
 
-                <h3>Redaktionell verantwortlich</h3>
-                <p>Liridon Drenica<br>
-                Neusser Straße 33<br>
-                40667 Meerbusch</p>
-            </div>
-        </section>
+                    <h3>Editorially Responsible</h3>
+                    <p>Liridon Drenica<br>
+                    Neusser Straße 33<br>
+                    40667 Meerbusch</p>
+                </div>
+            </section>
 
-        <!-- Haftungsausschluss Section -->
-        <section class="section">
-            <h2 class="sectionTitle">Haftungsausschluss</h2>
-            <div class="content">
-                <h3>Haftung für Inhalte</h3>
-                <p>Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den 
-                allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht 
-                unter der Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach 
-                Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+            <!-- Disclaimer Section -->
+            <section class="section">
+                <h2 class="sectionTitle">Disclaimer</h2>
+                <div class="content">
+                    <h3>Liability for Content</h3>
+                    <p>As a service provider, I am responsible for my own content on these pages in accordance with 
+                    § 7 para. 1 TMG under general law. However, according to §§ 8 to 10 TMG, I am not obligated as a 
+                    service provider to monitor transmitted or stored third-party information or to investigate 
+                    circumstances that indicate illegal activity.</p>
 
-                <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen 
-                Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der 
-                Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen 
-                werde ich diese Inhalte umgehend entfernen.</p>
+                    <p>Obligations to remove or block the use of information under general law remain unaffected. 
+                    However, liability in this regard is only possible from the time of knowledge of a specific 
+                    infringement. Upon becoming aware of corresponding legal violations, I will remove this content 
+                    immediately.</p>
 
-                <h3>Urheberrecht</h3>
-                <p>Die durch mich erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen 
-                Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der 
-                Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung. Downloads und Kopien dieser Seite 
-                sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
-            </div>
-        </section>
+                    <h3>Copyright</h3>
+                    <p>The content and works created by me on these pages are subject to German copyright law. 
+                    Duplication, processing, distribution, and any form of commercialization of such material beyond 
+                    the scope of the copyright law requires written consent. Downloads and copies of this page are 
+                    only permitted for private, non-commercial use.</p>
+                </div>
+            </section>
 
-        <!-- Datenschutz Section -->
-        <section class="section">
-            <h2 class="sectionTitle">Datenschutzerklärung</h2>
-            <div class="content">
-                <h3>1. Datenschutz auf einen Blick</h3>
-                <p>Diese Website ist ein statisches Portfolio ohne aktive Datensammlung. Die folgenden Hinweise 
-                informieren Sie über die automatisch entstehenden Daten beim Besuch dieser Website.</p>
+            <!-- Privacy Policy Section -->
+            <section class="section">
+                <h2 class="sectionTitle">Privacy Policy</h2>
+                <div class="content">
+                    <h3>1. Data Protection at a Glance</h3>
+                    <p>This website is a static portfolio without active data collection. The following information 
+                    informs you about the automatically generated data when visiting this website.</p>
 
-                <h3>2. Verantwortliche Stelle</h3>
-                <p>Verantwortlich für die Datenverarbeitung auf dieser Website:</p>
-                <p>Liridon Drenica<br>
-                Neusser Straße 33<br>
-                40667 Meerbusch<br>
-                E-Mail: Liridon992@gmx.de</p>
+                    <h3>2. Responsible Party</h3>
+                    <p>Responsible for data processing on this website:</p>
+                    <p>Liridon Drenica<br>
+                    Neusser Straße 33<br>
+                    40667 Meerbusch<br>
+                    Email: Liridon992@gmx.de</p>
 
-                <h3>3. Hosting und automatische Datenerfassung</h3>
-                <p><strong>Hosting:</strong> Diese Website wird über GitHub Pages gehostet.</p>
-                
-                <p><strong>Server-Log-Dateien:</strong> Beim Besuch dieser Website werden automatisch technische 
-                Informationen in Server-Log-Dateien gespeichert:</p>
-                <ul>
-                    <li>IP-Adresse</li>
-                    <li>Browsertyp und -version</li>
-                    <li>Betriebssystem</li>
-                    <li>Uhrzeit des Zugriffs</li>
-                    <li>Aufgerufene Seite</li>
-                </ul>
-                <p>Diese Daten werden automatisch durch den Hosting-Anbieter erhoben und nicht mit anderen 
-                Datenquellen zusammengeführt. Eine Auswertung oder Weiterverwendung findet nicht statt.</p>
+                    <h3>3. Hosting and Automatic Data Collection</h3>
+                    <p><strong>Hosting:</strong> This website is hosted via GitHub Pages.</p>
+                    
+                    <p><strong>Server Log Files:</strong> When visiting this website, technical information is 
+                    automatically stored in server log files:</p>
+                    <ul>
+                        <li>IP address</li>
+                        <li>Browser type and version</li>
+                        <li>Operating system</li>
+                        <li>Time of access</li>
+                        <li>Requested page</li>
+                    </ul>
+                    <p>This data is automatically collected by the hosting provider and is not combined with other 
+                    data sources. No analysis or further use takes place.</p>
 
-                <h3>4. Kontakt per E-Mail</h3>
-                <p>Wenn Sie mir per E-Mail Nachrichten senden, speichere ich Ihre E-Mail-Adresse und den Inhalt 
-                zur Bearbeitung Ihrer Anfrage. Diese Daten werden gelöscht, sobald die Bearbeitung abgeschlossen 
-                ist und keine rechtlichen Aufbewahrungspflichten bestehen.</p>
+                    <h3>4. Contact via Email</h3>
+                    <p>If you send me messages via email, I store your email address and the content to process 
+                    your inquiry. This data will be deleted once processing is complete and no legal retention 
+                    obligations exist.</p>
 
-                <h3>5. Ihre Rechte</h3>
-                <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung 
-                Ihrer personenbezogenen Daten. Kontaktieren Sie mich dazu über die oben genannte E-Mail-Adresse.</p>
-            </div>
-        </section>
+                    <h3>5. Your Rights</h3>
+                    <p>You have the right to information, correction, deletion, or restriction of the processing 
+                    of your personal data. Contact me using the email address mentioned above.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- GERMAN VERSION -->
+        <div id="content-de" class="language-content">
+            <!-- Impressum Section -->
+            <section class="section">
+                <h2 class="sectionTitle">Impressum</h2>
+                <div class="content">
+                    <h3>Angaben gemäß § 5 TMG</h3>
+                    <p><strong>Liridon Drenica</strong><br>
+                    Neusser Straße 33<br>
+                    40667 Meerbusch<br>
+                    Deutschland</p>
+
+                    <h3>Kontakt</h3>
+                    <p>E-Mail: <a href="mailto:Liridon992@gmx.de">Liridon992@gmx.de</a></p>
+
+                    <h3>Redaktionell verantwortlich</h3>
+                    <p>Liridon Drenica<br>
+                    Neusser Straße 33<br>
+                    40667 Meerbusch</p>
+                </div>
+            </section>
+
+            <!-- Haftungsausschluss Section -->
+            <section class="section">
+                <h2 class="sectionTitle">Haftungsausschluss</h2>
+                <div class="content">
+                    <h3>Haftung für Inhalte</h3>
+                    <p>Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den 
+                    allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht 
+                    unter der Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach 
+                    Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+
+                    <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen 
+                    Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der 
+                    Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen 
+                    werde ich diese Inhalte umgehend entfernen.</p>
+
+                    <h3>Urheberrecht</h3>
+                    <p>Die durch mich erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen 
+                    Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der 
+                    Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung. Downloads und Kopien dieser Seite 
+                    sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+                </div>
+            </section>
+
+            <!-- Datenschutz Section -->
+            <section class="section">
+                <h2 class="sectionTitle">Datenschutzerklärung</h2>
+                <div class="content">
+                    <h3>1. Datenschutz auf einen Blick</h3>
+                    <p>Diese Website ist ein statisches Portfolio ohne aktive Datensammlung. Die folgenden Hinweise 
+                    informieren Sie über die automatisch entstehenden Daten beim Besuch dieser Website.</p>
+
+                    <h3>2. Verantwortliche Stelle</h3>
+                    <p>Verantwortlich für die Datenverarbeitung auf dieser Website:</p>
+                    <p>Liridon Drenica<br>
+                    Neusser Straße 33<br>
+                    40667 Meerbusch<br>
+                    E-Mail: Liridon992@gmx.de</p>
+
+                    <h3>3. Hosting und automatische Datenerfassung</h3>
+                    <p><strong>Hosting:</strong> Diese Website wird über GitHub Pages gehostet.</p>
+                    
+                    <p><strong>Server-Log-Dateien:</strong> Beim Besuch dieser Website werden automatisch technische 
+                    Informationen in Server-Log-Dateien gespeichert:</p>
+                    <ul>
+                        <li>IP-Adresse</li>
+                        <li>Browsertyp und -version</li>
+                        <li>Betriebssystem</li>
+                        <li>Uhrzeit des Zugriffs</li>
+                        <li>Aufgerufene Seite</li>
+                    </ul>
+                    <p>Diese Daten werden automatisch durch den Hosting-Anbieter erhoben und nicht mit anderen 
+                    Datenquellen zusammengeführt. Eine Auswertung oder Weiterverwendung findet nicht statt.</p>
+
+                    <h3>4. Kontakt per E-Mail</h3>
+                    <p>Wenn Sie mir per E-Mail Nachrichten senden, speichere ich Ihre E-Mail-Adresse und den Inhalt 
+                    zur Bearbeitung Ihrer Anfrage. Diese Daten werden gelöscht, sobald die Bearbeitung abgeschlossen 
+                    ist und keine rechtlichen Aufbewahrungspflichten bestehen.</p>
+
+                    <h3>5. Ihre Rechte</h3>
+                    <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung 
+                    Ihrer personenbezogenen Daten. Kontaktieren Sie mich dazu über die oben genannte E-Mail-Adresse.</p>
+                </div>
+            </section>
+        </div>
 
         <footer class="footer">
-            <p>Letzte Aktualisierung: <span id="last-updated">wird geladen...</span></p>
-            <a href="Portfolio.html" class="backLink">← Zurück zum Portfolio</a>
+            <p id="footer-en" class="active">Last updated: <span id="last-updated-en">loading...</span></p>
+            <p id="footer-de">Letzte Aktualisierung: <span id="last-updated-de">loading...</span></p>
+            <a href="Portfolio.html" class="backLink active" id="footer-back-en">← Back to Portfolio</a>
+            <a href="Portfolio.html" class="backLink" id="footer-back-de">← Zurück zum Portfolio</a>
         </footer>
     </div>
 

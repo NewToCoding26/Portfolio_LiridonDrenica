@@ -126,7 +126,7 @@ function getStatusIcon(status) {
 function createSkillItem(skill) {
     return `
         <div class="skill-item">
-            <div>
+            <div class="skill-info">
                 <div class="skill-name">${skill.name}</div>
                 <div class="skill-details">${skill.details}</div>
             </div>
@@ -169,18 +169,120 @@ function createCategory(category, index) {
 // Toggle category expansion
 function toggleCategory(index) {
     const category = document.querySelector(`[data-category="${index}"]`);
-    category.classList.toggle('expanded');
+    if (category) {
+        category.classList.toggle('expanded');
+        
+        // Optional: Close other categories (accordion behavior)
+        // Uncomment the following lines if you want only one category open at a time
+        /*
+        const allCategories = document.querySelectorAll('.category');
+        allCategories.forEach((cat, i) => {
+            if (i !== index) {
+                cat.classList.remove('expanded');
+            }
+        });
+        */
+    }
 }
 
 // Initialize the roadmap
 function initRoadmap() {
     const container = document.getElementById('roadmap-categories');
-    const categoriesHtml = roadmapData.map((category, index) => 
-        createCategory(category, index)
-    ).join('');
+    if (container) {
+        const categoriesHtml = roadmapData.map((category, index) => 
+            createCategory(category, index)
+        ).join('');
+        
+        container.innerHTML = categoriesHtml;
+        
+        // Add keyboard navigation support
+        addKeyboardSupport();
+    }
+}
+
+// Add keyboard navigation for accessibility
+function addKeyboardSupport() {
+    const categoryHeaders = document.querySelectorAll('.category-header');
     
-    container.innerHTML = categoriesHtml;
+    categoryHeaders.forEach((header, index) => {
+        // Make headers focusable
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('role', 'button');
+        header.setAttribute('aria-expanded', 'false');
+        header.setAttribute('aria-label', `Toggle ${roadmapData[index].title} section`);
+        
+        // Add keyboard event listeners
+        header.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleCategory(index);
+                updateAriaExpanded(header, index);
+            }
+        });
+        
+        // Update aria-expanded when clicked
+        header.addEventListener('click', () => {
+            setTimeout(() => updateAriaExpanded(header, index), 100);
+        });
+    });
+}
+
+// Update aria-expanded attribute for accessibility
+function updateAriaExpanded(header, index) {
+    const category = document.querySelector(`[data-category="${index}"]`);
+    const isExpanded = category.classList.contains('expanded');
+    header.setAttribute('aria-expanded', isExpanded.toString());
+}
+
+// Handle window resize for responsive adjustments
+function handleResize() {
+    // Optional: Add any resize-specific logic here
+    // For example, closing all categories on very small screens
+    const isMobile = window.innerWidth <= 480;
+    
+    if (isMobile) {
+        // Optional: Auto-close categories on very small screens to save space
+        // Uncomment if desired:
+        /*
+        const categories = document.querySelectorAll('.category.expanded');
+        categories.forEach(category => {
+            category.classList.remove('expanded');
+        });
+        */
+    }
 }
 
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', initRoadmap);
+document.addEventListener('DOMContentLoaded', () => {
+    initRoadmap();
+    
+    // Add resize listener with debouncing
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(handleResize, 250);
+    });
+});
+
+// Optional: Add smooth scrolling to categories when expanded
+function smoothScrollToCategory(index) {
+    const category = document.querySelector(`[data-category="${index}"]`);
+    if (category && category.classList.contains('expanded')) {
+        setTimeout(() => {
+            category.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
+            });
+        }, 300); // Wait for expansion animation
+    }
+}
+
+// Export functions for potential external use
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        roadmapData,
+        calculateProgress,
+        toggleCategory,
+        initRoadmap
+    };
+}
