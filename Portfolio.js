@@ -26,15 +26,12 @@ if(pictureOfMe) {
     });
 }
 
-// FAQ Section Toggle Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const faqTitle = document.querySelector('.faqTitle');
     const faqContent = document.getElementById('faqSectionActivated');
     
-    // Add click event listener to FAQ title
     if (faqTitle && faqContent) {
         faqTitle.addEventListener('click', function() {
-            // Toggle the hidden class
             if (faqContent.classList.contains('hidden')) {
                 faqContent.classList.remove('hidden');
                 faqContent.classList.add('visible');
@@ -44,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Add hover effect for better UX
         faqTitle.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-2px)';
         });
@@ -54,27 +50,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // CV Modal functionality - FIXED SELECTOR
     const cvLink = document.querySelector('.footerIcon[title="CV Download"]');
-    console.log('CV Link found:', cvLink); // Debug log
-    
+    console.log('CV Link found:', cvLink); 
     if (cvLink) {
         cvLink.addEventListener('click', function(e) {
-            e.preventDefault(); // Verhindert das direkte Öffnen des Links
-            e.stopPropagation(); // Verhindert Event Bubbling
-            console.log('CV Link clicked - showing modal'); // Debug log
+            e.preventDefault(); 
+            e.stopPropagation(); 
+            console.log('CV Link clicked - showing modal'); 
             showCVModal();
         });
     } else {
-        console.log('CV Link not found!'); // Debug log
+        console.log('CV Link not found!'); 
     }
 });
 
-// CV Modal Functions
 function showCVModal() {
-    console.log('showCVModal called'); // Debug log
+    console.log('showCVModal called');
     
-    // Create modal if it doesn't exist
     let modal = document.getElementById('cvModal');
     if (!modal) {
         modal = createCVModal();
@@ -82,7 +74,6 @@ function showCVModal() {
     }
     
     modal.style.display = 'flex';
-    // Add fade-in animation
     setTimeout(() => {
         modal.classList.add('show');
     }, 10);
@@ -117,7 +108,6 @@ function createCVModal() {
         </div>
     `;
     
-    // Close modal when clicking outside
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             closeCVModal();
@@ -138,13 +128,11 @@ function closeCVModal() {
 }
 
 function viewCV() {
-    // Korrigierter Link
     window.open('https://newtocoding26.github.io/ApplicationDocuments/CV.pdf', '_blank');
     closeCVModal();
 }
 
 function downloadCV() {
-    // Für Download verwenden wir auch den korrekten Link
     const link = document.createElement('a');
     link.href = 'https://newtocoding26.github.io/ApplicationDocuments/CV.pdf';
     link.download = 'CV_Liridon_Drenica.pdf';
@@ -154,7 +142,6 @@ function downloadCV() {
     closeCVModal();
 }
 
-// Close modal with Escape key
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeCVModal();

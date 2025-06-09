@@ -1,4 +1,3 @@
-// Learning Roadmap Data
 const roadmapData = [
     {
         title: "1. Fundamentals",
@@ -19,7 +18,7 @@ const roadmapData = [
     {
         title: "3. Projects",
         skills: [
-            { name: "Portfolio Website", details: "Combine HTML/CSS with basic JavaScript", status: "progress" },
+            { name: "Portfolio Website", details: "Combine HTML/CSS with basic JavaScript", status: "completed" },
             { name: "To-Do List App", details: "Implement using OOP principles", status: "pending" },
             { name: "Weather App", details: "Fetch API data and display using OOP structure", status: "pending" }
         ]
@@ -100,29 +99,25 @@ const roadmapData = [
     }
 ];
 
-// Calculate progress percentage for a category
 function calculateProgress(skills) {
     const completed = skills.filter(skill => skill.status === 'completed').length;
     const inProgress = skills.filter(skill => skill.status === 'progress').length;
     
-    // Completed skills count as 100%, in-progress as 50%
     const totalProgress = (completed * 100) + (inProgress * 50);
     const maxProgress = skills.length * 100;
     
     return Math.round(totalProgress / maxProgress * 100);
 }
 
-// Get status icon based on skill status
 function getStatusIcon(status) {
     const icons = {
         completed: '✓',
-        progress: '', // Empty, animation handled by CSS
+        progress: '', 
         pending: '✕'
     };
     return icons[status] || '';
 }
 
-// Create HTML for a skill item
 function createSkillItem(skill) {
     return `
         <div class="skill-item">
@@ -137,7 +132,6 @@ function createSkillItem(skill) {
     `;
 }
 
-// Create HTML for a category
 function createCategory(category, index) {
     const progress = calculateProgress(category.skills);
     const completedCount = category.skills.filter(skill => skill.status === 'completed').length;
@@ -166,26 +160,13 @@ function createCategory(category, index) {
     `;
 }
 
-// Toggle category expansion
 function toggleCategory(index) {
     const category = document.querySelector(`[data-category="${index}"]`);
     if (category) {
         category.classList.toggle('expanded');
-        
-        // Optional: Close other categories (accordion behavior)
-        // Uncomment the following lines if you want only one category open at a time
-        /*
-        const allCategories = document.querySelectorAll('.category');
-        allCategories.forEach((cat, i) => {
-            if (i !== index) {
-                cat.classList.remove('expanded');
-            }
-        });
-        */
     }
 }
 
-// Initialize the roadmap
 function initRoadmap() {
     const container = document.getElementById('roadmap-categories');
     if (container) {
@@ -195,23 +176,19 @@ function initRoadmap() {
         
         container.innerHTML = categoriesHtml;
         
-        // Add keyboard navigation support
         addKeyboardSupport();
     }
 }
 
-// Add keyboard navigation for accessibility
 function addKeyboardSupport() {
     const categoryHeaders = document.querySelectorAll('.category-header');
     
     categoryHeaders.forEach((header, index) => {
-        // Make headers focusable
         header.setAttribute('tabindex', '0');
         header.setAttribute('role', 'button');
         header.setAttribute('aria-expanded', 'false');
         header.setAttribute('aria-label', `Toggle ${roadmapData[index].title} section`);
         
-        // Add keyboard event listeners
         header.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -220,43 +197,23 @@ function addKeyboardSupport() {
             }
         });
         
-        // Update aria-expanded when clicked
         header.addEventListener('click', () => {
             setTimeout(() => updateAriaExpanded(header, index), 100);
         });
     });
 }
 
-// Update aria-expanded attribute for accessibility
 function updateAriaExpanded(header, index) {
     const category = document.querySelector(`[data-category="${index}"]`);
     const isExpanded = category.classList.contains('expanded');
     header.setAttribute('aria-expanded', isExpanded.toString());
 }
 
-// Handle window resize for responsive adjustments
-function handleResize() {
-    // Optional: Add any resize-specific logic here
-    // For example, closing all categories on very small screens
-    const isMobile = window.innerWidth <= 480;
-    
-    if (isMobile) {
-        // Optional: Auto-close categories on very small screens to save space
-        // Uncomment if desired:
-        /*
-        const categories = document.querySelectorAll('.category.expanded');
-        categories.forEach(category => {
-            category.classList.remove('expanded');
-        });
-        */
-    }
-}
 
-// Initialize when DOM is loaded
+
 document.addEventListener('DOMContentLoaded', () => {
     initRoadmap();
     
-    // Add resize listener with debouncing
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
@@ -264,7 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Optional: Add smooth scrolling to categories when expanded
 function smoothScrollToCategory(index) {
     const category = document.querySelector(`[data-category="${index}"]`);
     if (category && category.classList.contains('expanded')) {
@@ -273,11 +229,10 @@ function smoothScrollToCategory(index) {
                 behavior: 'smooth',
                 block: 'nearest'
             });
-        }, 300); // Wait for expansion animation
+        }, 300); 
     }
 }
 
-// Export functions for potential external use
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         roadmapData,

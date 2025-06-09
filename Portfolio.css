@@ -20,6 +20,10 @@ body {
     justify-content: flex-start;
 }
 
+.questions{
+    font-size: 1.5rem;
+}
+
 .text-left {
     display: flex;
     flex-direction: column;
