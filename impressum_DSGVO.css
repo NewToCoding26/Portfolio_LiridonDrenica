@@ -29,7 +29,6 @@ body {
     font-weight: bold;
 }
 
-/* Language Toggle Styles */
 .language-toggle {
     text-align: center;
     margin: 20px 0;
@@ -61,7 +60,6 @@ body {
     margin-right: 5px;
 }
 
-/* Language Content */
 .language-content {
     display: none;
     animation: fadeIn 0.5s ease-in-out;
@@ -196,7 +194,6 @@ body {
     border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Tablet Responsive Design */
 @media (max-width: 1024px) and (min-width: 769px) {
     body {
         padding: 15px;
@@ -259,7 +256,6 @@ body {
     }
 }
 
-/* Mobile Responsive Design */
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -342,7 +338,6 @@ body {
     }
 }
 
-/* Extra Small Mobile Devices */
 @media (max-width: 480px) {
     body {
         padding: 8px;
@@ -398,7 +393,6 @@ body {
     }
 }
 
-/* Large Tablet and Small Desktop */
 @media (min-width: 1025px) and (max-width: 1200px) {
     .container {
         max-width: 900px;
@@ -413,7 +407,6 @@ body {
     }
 }
 
-/* Print Styles */
 @media print {
     body {
         background-color: white;

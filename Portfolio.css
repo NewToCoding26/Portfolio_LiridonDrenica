@@ -156,7 +156,6 @@ body {
     color: #1B4332;
 }
 
-/* Footer Styles */
 .footer {
     background-color: #2D5A3D;
     color: #C8E6C9;
@@ -259,7 +258,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* CV Modal Styles */
 .cv-modal {
     position: fixed;
     top: 0;
@@ -400,11 +398,6 @@ body {
     font-size: 1.3rem;
 }
 
-/* RESPONSIVE DESIGN */
-
-/* Large Desktop (1200px+) - Base styles above */
-
-/* Medium Desktop / Large Tablet (992px - 1199px) */
 @media (max-width: 1199px) and (min-width: 992px) {
     .text {
         padding: 40px;
@@ -440,7 +433,6 @@ body {
     }
 }
 
-/* Small Desktop / Large Tablet (768px - 991px) */
 @media (max-width: 991px) and (min-width: 768px) {
     .text {
         padding: 30px;
@@ -505,7 +497,6 @@ body {
     }
 }
 
-/* Tablet Portrait (481px - 767px) */
 @media (max-width: 767px) and (min-width: 481px) {
     .text {
         padding: 25px;
@@ -600,7 +591,6 @@ body {
     }
 }
 
-/* Mobile Landscape & Large Mobile (321px - 480px) */
 @media (max-width: 480px) and (min-width: 321px) {
     .text {
         padding: 20px;
@@ -753,7 +743,6 @@ body {
     }
 }
 
-/* Small Mobile (max-width: 320px) */
 @media (max-width: 320px) {
     .text {
         padding: 15px;
@@ -839,7 +828,6 @@ body {
     }
 }
 
-/* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
     .faqTitle:hover {
         transform: none;
@@ -861,7 +849,6 @@ body {
         box-shadow: none;
     }
     
-    /* Increase touch targets */
     .faqTitle {
         padding: 10px 0;
     }
